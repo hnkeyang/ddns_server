@@ -24,9 +24,9 @@ def start_api():
     api = Update_API(host=host, port=api_port, domain_ip_map=DOMAIN_IP_MAP, auth_token_map=AUTH_TOKEN_MAP)
     api.run()
 
-
-with open('domain_ip.json') as f:
-    DOMAIN_IP_MAP = json.load(f)
+if os.path.exists('domain_ip.json'):
+    with open('domain_ip.json') as f:
+        DOMAIN_IP_MAP = json.load(f)
 
 dns_thread = threading.Thread(target=start_dns_server)
 dns_thread.start()
