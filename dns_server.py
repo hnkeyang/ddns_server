@@ -13,7 +13,7 @@ class DNS_Server:
         reply = DNSRecord(DNSHeader(id=request.header.id, qr=1, aa=1, ra=1), q=request.q) 
 
         qname = request.q.qname
-        qn = str(qname).strip('.')
+        qn = str(qname).strip('.').lower()
 
         if qn in self.domain_ip_map and request.q.qtype == QTYPE.A:
             ip = self.domain_ip_map[qn]

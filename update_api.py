@@ -17,7 +17,7 @@ class Update_API:
 
     def update_ip(self):
         token = request.query.token
-        domain = request.query.domain
+        domain = request.query.domain.lower()
         ip = request.query.ip or request.remote_addr
 
         if token not in self.auth_token_map or (len(self.auth_token_map[token]) != 0 and domain not in self.auth_token_map[token]):
