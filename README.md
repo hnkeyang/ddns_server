@@ -32,6 +32,7 @@ api_port = 2053
 ./ddns.py
 
 ## 更新域名
+
 ```
 curl "http://1.2.3.4:2053/update?token=3beacceac4252f5da3428dcdba4ae215&domain=1.ddns.com"
 curl "http://1.2.3.4:2053/update?token=3beacceac4252f5da3428dcdba4ae214&domain=2.ddns.com&ip=1.1.1.1"
